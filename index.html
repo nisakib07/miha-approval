@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Approval Needed 💍</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background layers -->
+    <div class="background-container">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+        <div id="floating-elements-container"></div>
+    </div>
+
+    <div id="app">
+        <!-- Step 1: Greeting -->
+        <section id="step-1" class="step active">
+            <div class="glass-card">
+                <div class="emoji">😌</div>
+                <h1 class="fade-in">Assalamu Alaikum Miha Apu</h1>
+                <p class="fade-in">Ekta serious kotha chilo...</p>
+                <button id="btn-ki-kotha" class="btn primary">Ki kotha? 👀</button>
+            </div>
+        </section>
+
+        <!-- Step 2: Suspense Build -->
+        <section id="step-2" class="step">
+            <div class="glass-card">
+                <div class="emoji">😏</div>
+                <h1 class="fade-in">Ready toh?</h1>
+                <p class="fade-in">Shock khete paro kintu.</p>
+                <div class="btn-group">
+                    <button id="btn-bolo" class="btn primary">Bolo 😤</button>
+                    <button id="btn-ready-na" class="btn secondary">Ami ready na 😶</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: The Question -->
+        <section id="step-3" class="step">
+            <div class="glass-card full-width">
+                <div class="question-container">
+                    <h1 class="big-question">Tmr bubu ke amr sathe biye diba? 💍😌</h1>
+                </div>
+                <div class="action-zone">
+                    <button id="btn-yes" class="btn success">Yes 😌</button>
+                    <button id="btn-no" class="btn danger">No 😈</button>
+                </div>
+                <div id="no-status-message" class="status-msg"></div>
+            </div>
+        </section>
+
+        <!-- Step 4: Loading (Fake) -->
+        <section id="step-loading" class="step">
+            <div class="glass-card">
+                <div class="loader-container">
+                    <div class="spinner"></div>
+                    <p id="loading-text">Processing approval...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 5: Success -->
+        <section id="step-final" class="step">
+            <div class="glass-card success-card">
+                <div class="emoji-explosion">💍💖✨</div>
+                <h1 class="reveal-text shimmer">Alhamdulillah! Approval Granted 😌💍</h1>
+                <p class="reveal-subtitle">Future Bhai Activated.</p>
+                <p class="reveal-subtitle">Mimi is officially mine now.</p>
+                <div class="screenshot-hint">Screenshot niye pathao 😏</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Canvas for Confetti/Fireworks -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
