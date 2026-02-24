@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Approval Needed 💍</title>
+    <meta name="description" content="A special approval request">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Animated background layers -->
@@ -23,8 +24,8 @@
         <section id="step-1" class="step active">
             <div class="glass-card">
                 <div class="emoji">😌</div>
-                <h1 class="fade-in">Assalamu Alaikum Miha Apu</h1>
-                <p class="fade-in">Ekta serious kotha chilo...</p>
+                <h1>Assalamu Alaikum Miha Apu</h1>
+                <p>Ekta serious kotha chilo...</p>
                 <button id="btn-ki-kotha" class="btn primary">Ki kotha? 👀</button>
             </div>
         </section>
@@ -33,8 +34,8 @@
         <section id="step-2" class="step">
             <div class="glass-card">
                 <div class="emoji">😏</div>
-                <h1 class="fade-in">Ready toh?</h1>
-                <p class="fade-in">Shock khete paro kintu.</p>
+                <h1>Ready toh?</h1>
+                <p>Shock khete paro kintu.</p>
                 <div class="btn-group">
                     <button id="btn-bolo" class="btn primary">Bolo 😤</button>
                     <button id="btn-ready-na" class="btn secondary">Ami ready na 😶</button>
@@ -46,11 +47,11 @@
         <section id="step-3" class="step">
             <div class="glass-card full-width">
                 <div class="question-container">
-                    <h1 class="big-question">Tmr bubu ke amr sathe biye diba? 💍😌</h1>
+                    <h1 class="big-question">Tmr bubu ke biye korar permission chai 💍😌</h1>
                 </div>
                 <div class="action-zone">
-                    <button id="btn-yes" class="btn success">Yes 😌</button>
-                    <button id="btn-no" class="btn danger">No 😈</button>
+                    <button id="btn-yes" class="btn success">Permission Granted 😌</button>
+                    <button id="btn-no" class="btn danger">Permission Denied 😈</button>
                 </div>
                 <div id="no-status-message" class="status-msg"></div>
             </div>
@@ -69,6 +70,11 @@
         <!-- Step 5: Success -->
         <section id="step-final" class="step">
             <div class="glass-card success-card">
+                <span class="sparkle">✨</span>
+                <span class="sparkle">💫</span>
+                <span class="sparkle">✨</span>
+                <span class="sparkle">💫</span>
+                <span class="sparkle">✨</span>
                 <div class="emoji-explosion">💍💖✨</div>
                 <h1 class="reveal-text shimmer">Alhamdulillah! Approval Granted 😌💍</h1>
                 <p class="reveal-subtitle">Future Bhai Activated.</p>
@@ -78,7 +84,7 @@
         </section>
     </div>
 
-    <!-- Canvas for Confetti/Fireworks -->
+    <!-- Canvas for Confetti -->
     <canvas id="confetti-canvas"></canvas>
 
     <script src="script.js"></script>
