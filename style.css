@@ -12,6 +12,8 @@
     --text-secondary: rgba(255,255,255,0.75);
 }
 
+/* ---------------- RESET ---------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -61,12 +63,6 @@ body {
     to { transform: translate(50px,-40px) scale(1.1); }
 }
 
-#floating-elements-container {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
 /* ---------------- STEPS ---------------- */
 
 .step {
@@ -108,7 +104,7 @@ h1 {
 .big-question {
     font-size: clamp(1.7rem, 6vw, 2.3rem);
     line-height: 1.25;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     background: linear-gradient(90deg, #ff99ac, #ff4e88);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -130,26 +126,20 @@ p {
     border: none;
     padding: 1.2rem 1.6rem;
     border-radius: 999px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     width: 100%;
 }
 
 .btn:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
 .primary {
     background: #fff;
     color: #ff4e88;
-}
-
-.secondary {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .success {
@@ -164,30 +154,33 @@ p {
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* ---------------- ACTION ZONE ---------------- */
+/* ---------------- ACTION ZONE (FIXED) ---------------- */
 
 .action-zone {
     position: relative;
     width: 100%;
-    height: min(45vh, 360px);
+    height: min(42vh, 320px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden; /* 🔥 boundary fix */
 }
 
-#btn-no {
-    position: absolute;
-    min-width: 110px;
-}
-
+/* YES button */
 #btn-yes {
-    position: relative;
-    min-width: 100%;
+    width: 100%;
     z-index: 5;
 }
+
+/* NO button */
+#btn-no {
+    position: absolute;
+    bottom: 0;
+    min-width: 120px;
+    z-index: 4;
+}
+
+/* ---------------- STATUS ---------------- */
 
 .status-msg {
     margin-top: 1.5rem;
@@ -227,18 +220,14 @@ p {
     z-index: 999;
 }
 
-/* ---------------- FLOATING ---------------- */
-
-@keyframes floatUp {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-120vh); opacity: 0; }
-}
-
 /* ---------------- SMALL PHONES ---------------- */
 
 @media (max-width: 360px) {
     .glass-card {
-        padding: 2.2rem 1.5rem;
+        padding: 2.2rem 1.4rem;
+    }
+    .big-question {
+        margin-bottom: 2rem;
     }
 }
 
