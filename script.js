@@ -19,9 +19,41 @@
     const noStatusMsg = document.getElementById('no-status-message');
     const loadingText = document.getElementById('loading-text');
     const floatingContainer = document.getElementById('floating-elements-container');
+    const pleadPopup = document.getElementById('plead-popup');
+    const popupCloseBtn = document.getElementById('popup-close');
+    const farewellPopup = document.getElementById('farewell-popup');
+    const farewellCloseBtn = document.getElementById('farewell-close');
 
     let noClickCount = 0;
     let transitioning = false;
+
+    // ========== PLEADING POPUP ==========
+
+    function showPleadPopup() {
+        pleadPopup.classList.add('show');
+    }
+
+    function hidePleadPopup() {
+        pleadPopup.classList.remove('show');
+    }
+
+    function showFarewellPopup() {
+        farewellPopup.classList.add('show');
+    }
+
+    function hideFarewellPopup() {
+        farewellPopup.classList.remove('show');
+    }
+
+    popupCloseBtn.addEventListener('click', hidePleadPopup);
+    pleadPopup.addEventListener('click', (e) => {
+        if (e.target === pleadPopup) hidePleadPopup();
+    });
+
+    farewellCloseBtn.addEventListener('click', hideFarewellPopup);
+    farewellPopup.addEventListener('click', (e) => {
+        if (e.target === farewellPopup) hideFarewellPopup();
+    });
 
     // ========== STEP TRANSITION ==========
 
@@ -217,10 +249,13 @@
             // Flash effect
             buttons.no.classList.remove('danger');
             buttons.no.classList.add('success', 'no-surrender');
-            buttons.no.textContent = 'Yes 😌💍';
+            buttons.no.textContent = 'Okay jao granted😌💍';
             buttons.no.style.transform = 'scale(1) rotate(0deg)';
             buttons.no.style.opacity = '1';
-            buttons.no.style.minWidth = '120px';
+            buttons.no.style.minWidth = 'auto';
+            buttons.no.style.width = 'auto';
+            buttons.no.style.whiteSpace = 'nowrap';
+            buttons.no.style.padding = '1rem 1.5rem';
 
             // Move to center-bottom nicely
             const zone = document.querySelector('.action-zone');
@@ -262,6 +297,16 @@
             ? (noClickCount - 1 - [0, 2, 4][phase]) % phaseData.buttonTexts.length
             : 0;
         buttons.no.textContent = phaseData.buttonTexts[btnTextIndex];
+
+        // ---- Show pleading popup on 3rd denial ----
+        if (noClickCount === 3) {
+            showPleadPopup();
+        }
+
+        // ---- Show farewell popup on 4th denial ----
+        if (noClickCount === 4) {
+            showFarewellPopup();
+        }
 
         // ---- Phase-specific effects ----
 

@@ -550,6 +550,71 @@ p {
     animation: textFadeIn 0.3s ease both;
 }
 
+/* =============== PLEADING POPUP =============== */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s 0.4s;
+    padding: 1.5rem;
+}
+
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s;
+}
+
+.popup-card {
+    background: rgba(30, 20, 60, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 2rem 1.5rem;
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.85) translateY(20px);
+    transition: transform 0.5s var(--ease-spring);
+}
+
+.popup-overlay.show .popup-card {
+    transform: scale(1) translateY(0);
+}
+
+.popup-img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.popup-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--bg-accent-soft);
+    margin-bottom: 1.5rem;
+    animation: none;
+}
+
+.popup-btn {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+}
+
 /* =============== LOADING SCREEN =============== */
 
 .loader-container {
